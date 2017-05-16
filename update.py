@@ -25,6 +25,14 @@ except KeyError:
   print ""
   sys.exit(1);
 
+
+def gettweets():
+  #will eventually get tweets from interwebs
+  return ("Wow \n \n"
+          "look at *all* \n \n"
+          "mah strings")
+
+
 reddit = praw.Reddit(client_id=cli_id,
                      client_secret=cli_sec,
                      username=user,
@@ -32,3 +40,4 @@ reddit = praw.Reddit(client_id=cli_id,
                      user_agent=agent)
 
 print reddit.user.me()
+reddit.subreddit('prawtestinggrounds').submit(title="Tweets of {}".format("placeholder"),selftext=gettweets())
