@@ -14,13 +14,17 @@ Make sure you have an account on both, then follow the instructions [here](http:
 
 Through this process, you will get a Client ID and Secret from Reddit, and your Twitter Key, Secret, Token, and Token Secret.
 
-Set RedditClientID, RedditSecret, RedditUsername, RedditPassword, TwitterKey, TwitterSecret, TwitterToken, and TwitterTokenSecret appropriately in your environment variables.  Lastly, set RedditAgent in your environment variables.  It doesn't seem to have exact specifications, but it's best to include your username, and a little bit about your bot.  Something like `/u/myusername bot to summarize twitter feeds` works fine.
+Set RedditClientID, RedditSecret, RedditUsername, RedditPassword, TwitterKey, TwitterSecret, TwitterToken, and TwitterTokenSecret appropriately in your environment variables.  Lastly, set RedditAgent in your environment variables.  It doesn't seem to have exact specifications, but it's best to include your username, and a little bit about your bot.  Something like this works fine:
+
+`/u/myusername bot to summarize twitter feeds`
 
 It's easiest to export these in your .bashrc.
 
 ## How to use
 
-In order to make a single post (not scheduled), just run `./update.py subredditname twitterhandle`.
+In order to make a single post (not scheduled), just run:
+
+`./update.py subredditname twitterhandle`
 
 The script automatically posts only tweets you have not yet posted to that subreddit, for that particular user.
 
