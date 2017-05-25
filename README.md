@@ -32,4 +32,4 @@ To make regular posts, simply set a cronjob to run at the interval you specify.
 
 # Future improvements
 
-The project could benefit from some pep8.  In addition, I may automate some tools for making regular posts.
+I may automate some tools for making regular posts.
