@@ -4,8 +4,6 @@ This bot posts synopses of twitter feeds to reddit.
 
 ReddTwit is free software, so you are free to use, copy, modify, and distribute this code as you desire.  Though, I would certainly appreciate if you credited the original project.
 
-Work in progress.
-
 ## Setup
 
 First, you must get your api credentials from reddit and twitter.
@@ -31,3 +29,7 @@ The script automatically posts only tweets you have not yet posted to that subre
 *Note: this is not done in a particularly robust way.  The id of the most recent tweet fetched is simply saved to a file in the current directory identifying the user and subreddit, and only tweets newer than that id are fetched.  This could fail if you try and post too often to reddit, since an id would be saved that did not post.  This could also fail if the user specified has tweeted more than 200 times since the script was last run.  This may be improved later.*
 
 To make regular posts, simply set a cronjob to run at the interval you specify.
+
+# Future improvements
+
+The project could benefit from some pep8.  In addition, I may automate some tools for making regular posts.
