@@ -1,6 +1,9 @@
 ## Overview
 
 This bot posts synopses of twitter feeds to reddit.
+
+ReddTwit is free software, so you are free to use, copy, modify, and distribute this code as you desire.  Though, I would certainly appreciate if you credited the original project.
+
 Work in progress.
 
 ## Setup
