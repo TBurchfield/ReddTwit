@@ -7,15 +7,17 @@ import praw
 import twitter
 
 try:
-    reddit_client_id = os.environ["RedditClientID"]
-    reddit_client_secret = os.environ["RedditSecret"]
-    reddit_username = os.environ["RedditUsername"]
-    reddit_password = os.environ["RedditPassword"]
-    reddit_agent = os.environ["RedditAgent"]
-    twitter_key = os.environ["TwitterKey"]
-    twitter_secret = os.environ["TwitterSecret"]
-    twitter_token = os.environ["TwitterToken"]
-    twitter_token_secret = os.environ["TwitterTokenSecret"]
+    #reddit
+    reddit_client_id        = os.environ["RedditClientID"]
+    reddit_client_secret    = os.environ["RedditSecret"]
+    reddit_username         = os.environ["RedditUsername"]
+    reddit_password         = os.environ["RedditPassword"]
+    reddit_agent            = os.environ["RedditAgent"]
+    #twitter
+    twitter_key             = os.environ["TwitterKey"]
+    twitter_secret          = os.environ["TwitterSecret"]
+    twitter_token           = os.environ["TwitterToken"]
+    twitter_token_secret    = os.environ["TwitterTokenSecret"]
 
 except KeyError:
     print ""
