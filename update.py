@@ -1,4 +1,5 @@
 #!/usr/bin/env python2.7
+
 # Will scrape a list of twitter users, and make reddit posts about their tweets
 import os
 import sys
@@ -6,15 +7,17 @@ import praw
 import twitter
 
 try:
-    Rcli_id = os.environ["RedditClientID"]
-    Rcli_sec = os.environ["RedditSecret"]
-    Ruser = os.environ["RedditUsername"]
-    Rpasswd = os.environ["RedditPassword"]
-    Ragent = os.environ["RedditAgent"]
-    TKey = os.environ["TwitterKey"]
-    TSecret = os.environ["TwitterSecret"]
-    TTok = os.environ["TwitterToken"]
-    TTokSec = os.environ["TwitterTokenSecret"]
+    #reddit
+    reddit_client_id        = os.environ["RedditClientID"]
+    reddit_client_secret    = os.environ["RedditSecret"]
+    reddit_username         = os.environ["RedditUsername"]
+    reddit_password         = os.environ["RedditPassword"]
+    reddit_agent            = os.environ["RedditAgent"]
+    #twitter
+    twitter_key             = os.environ["TwitterKey"]
+    twitter_secret          = os.environ["TwitterSecret"]
+    twitter_token           = os.environ["TwitterToken"]
+    twitter_token_secret    = os.environ["TwitterTokenSecret"]
 
 except KeyError:
     print ""
@@ -99,16 +102,16 @@ def update_config(name, subreddit, since):
 if __name__ == "__main__":  # just in case anyone imports this
     sub = sys.argv[1]  # which subreddit to post to
     handle = sys.argv[2]     # which user to scrape
-    redditapi = praw.Reddit(client_id=Rcli_id,
-                            client_secret=Rcli_sec,
-                            username=Ruser,
-                            password=Rpasswd,
-                            user_agent=Ragent)
+    redditapi = praw.Reddit(client_id     = reddit_client_id,
+                            client_secret = reddit_client_secret,
+                            username      = reddit_username,
+                            password      = reddit_password,
+                            user_agent    = reddit_agent)
 
-    twitterapi = twitter.Api(consumer_key=TKey,
-                             consumer_secret=TSecret,
-                             access_token_key=TTok,
-                             access_token_secret=TTokSec)
+    twitterapi = twitter.Api(consumer_key         = twitter_key,
+                             consumer_secret      = twitter_secret,
+                             access_token_key     = twitter_token,
+                             access_token_secret  = twitter_token_secret)
 
     [since, usesince] = config(handle, sub)
     statuses = get_statuses(handle, since, usesince, twitterapi)
